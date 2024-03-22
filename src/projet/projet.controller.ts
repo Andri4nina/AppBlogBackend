@@ -1,11 +1,11 @@
+import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
+import { Query as ExpressQuery } from 'express-serve-static-core';
 
 import { CreateProjectDto } from './dto/create-projet.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
 import { ProjetService } from './projet.service';
 import { Projet } from './schemas/project.schema';
 
-import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
-import { Query as ExpressQuery } from 'express-serve-static-core';
 
 @Controller('projet')
 export class ProjetController {
@@ -50,5 +50,8 @@ export class ProjetController {
     return this.projetService.deleteById(id)
     }
 
-
+    @Get('give/thelastest')
+    async getLastCreatedProjet(): Promise<Projet> {
+      return this.projetService.findLastCreatedProjet();
+    }
 }

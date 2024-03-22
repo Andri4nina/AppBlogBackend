@@ -1,11 +1,21 @@
-import { Controller, Post, UploadedFile, UseInterceptors } from '@nestjs/common';
-import { FileInterceptor } from '@nestjs/platform-express';
-import { diskStorage } from 'multer';
+import { Controller } from '@nestjs/common';
 
 @Controller('image')
 export class ImageController {
 
-    @Post('/pdp')
+
+
+
+
+
+
+
+
+
+
+
+
+    /* @Post('/pdp')
     @UseInterceptors(FileInterceptor('img', {
         storage: diskStorage({
             destination: './img/pdp',
@@ -19,7 +29,7 @@ export class ImageController {
         console.log('file', file);
         return 'pdp ajouté';
     }
-    
+     */
     
     
     

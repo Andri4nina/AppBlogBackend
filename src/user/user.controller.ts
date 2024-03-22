@@ -24,7 +24,7 @@ export class UserController {
         @Body()
         user: CreateUserDto,
     ): Promise<User> { 
-    return this.userService.create(user)
+    return this.userService.create(user);
     }
     
     @Get('/last')

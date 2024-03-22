@@ -1,8 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import mongoose from 'mongoose';
-import { Projet } from './schemas/project.schema';
 import { Query } from 'express-serve-static-core';
+import mongoose from 'mongoose';
+
+import { Projet } from './schemas/project.schema';
+
 @Injectable()
 export class ProjetService {
 
@@ -49,5 +51,8 @@ export class ProjetService {
         return await this.projetModel.findByIdAndDelete(id);
     }
     
+    async findLastCreatedProjet(): Promise<Projet> {
+        return this.projetModel.findOne().sort({ createdAt: -1 });
+      }
     
 }

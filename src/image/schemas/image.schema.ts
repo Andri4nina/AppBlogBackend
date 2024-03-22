@@ -4,7 +4,7 @@ import { Document } from 'mongoose';
 @Schema()
 export class Image extends Document {
   @Prop()
-  image: string;
+  imagePath: string;
 
   @Prop({ required: false })
   id_user?: string;

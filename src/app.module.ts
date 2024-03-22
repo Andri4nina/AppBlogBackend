@@ -14,6 +14,8 @@ import { ProjetModule } from './projet/projet.module';
 import { TaskModule } from './task/task.module';
 import { UserModule } from './user/user.module';
 import { VisiteurModule } from './visiteur/visiteur.module';
+import { AuthModule } from './auth/auth.module';
+
 
 @Module({
   imports: [
@@ -32,6 +34,8 @@ import { VisiteurModule } from './visiteur/visiteur.module';
     CommentaireModule,
     VisiteurModule,
     TaskModule,
+    AuthModule,
+
    
     ],
   controllers: [AppController],
